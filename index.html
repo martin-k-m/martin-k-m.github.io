@@ -3,97 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Martin Muskov - Developer Profile</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Martin Muskov</title>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f4f4f5;
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+
+        .profile-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-header h1 {
+            color: #f0f0f0;
+            margin-bottom: 10px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 2px solid #333;
+            width: 100px;
+            margin: 0 auto 20px;
+        }
+
+        .profile-image {
+            display: block;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            object-fit: cover;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            border: 4px solid #333;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #f0f0f0;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .projects, .github-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .projects img, .github-stats img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background-color: #333;
+            color: #e0e0e0;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+
+        .skill-tag:hover {
+            background-color: #444;
+        }
+
+        .accounts {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .accounts img {
+            width: 60px;
+            height: 60px;
+            margin: 0 10px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            filter: invert(0.8);
+        }
+
+        .accounts img:hover {
+            opacity: 1;
+            filter: invert(1);
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        footer {
+            text-align: center;
+            color: #777;
+            margin-top: 30px;
+            font-size: 0.9em;
+            border-top: 2px solid #333;
+            padding-top: 20px;
+        }
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 50%;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-<div class="container mx-auto px-4 py-12 max-w-3xl">
-    <div class="text-center mb-8">
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">Martin Muskov</h1>
-        <hr class="border-t-2 border-gray-300 w-24 mx-auto mb-6">
+<body>
+<div class="container">
+    <div class="profile-header">
+        <h1>Martin Muskov</h1>
+        <hr class="divider">
     </div>
 
-    <div class="flex justify-center mb-12">
-        <img
-                src="https://avatars.githubusercontent.com/u/65186527?s=400&u=8a3688aeae485910d1e0f282045f339e39786848&v=4"
-                alt="Martin Muskov"
-                class="w-40 h-40 rounded-full object-cover shadow-lg"
-        >
-    </div>
+    <img
+            src="https://avatars.githubusercontent.com/u/65186527?s=400&u=8a3688aeae485910d1e0f282045f339e39786848&v=4"
+            alt="Martin Muskov"
+            class="profile-image"
+    >
 
-    <section class="mb-12">
-        <h2 class="text-2xl font-semibold text-center mb-6">Projects</h2>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow">
-                <h3 class="font-medium mb-2">GitHub Readme Stats</h3>
-                <p class="text-gray-600 text-sm mb-4">A project for generating GitHub profile statistics.</p>
-                <a href="https://github.com/anuraghazra/github-readme-stats"
-                   class="text-blue-600 hover:underline">View Project</a>
-            </div>
-            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition-shadow">
-                <h3 class="font-medium mb-2">GitHub Readme Stats</h3>
-                <p class="text-gray-600 text-sm mb-4">Another project for generating GitHub profile statistics.</p>
-                <a href="https://github.com/anuraghazra/github-readme-stats"
-                   class="text-blue-600 hover:underline">View Project</a>
-            </div>
+    <section>
+        <h2 class="section-title">Projects</h2>
+        <div class="projects">
+            <a href="https://https://github.com/martin-k-m/datanb">
+            <img
+                    src="https://github-readme-stats.vercel.app/api/pin/?username=martin-k-m&repo=datanb&cache_seconds=86400&theme=dark&hide_border=true"
+                    alt="GitHub Project 1"
+                    class="center"
+            >
+            </a>
         </div>
     </section>
 
-    <section class="mb-12">
-        <h2 class="text-2xl font-semibold text-center mb-6">Knowledge</h2>
-        <div class="flex justify-center space-x-6">
-            <div class="bg-white rounded-lg shadow px-4 py-2 text-gray-700">Python</div>
-            <div class="bg-white rounded-lg shadow px-4 py-2 text-gray-700">Rust</div>
-            <div class="bg-white rounded-lg shadow px-4 py-2 text-gray-700">JavaScript</div>
-        </div>
-        <div class="flex justify-center space-x-6 mt-4">
-            <div class="bg-white rounded-lg shadow px-4 py-2 text-gray-700">React</div>
-            <div class="bg-white rounded-lg shadow px-4 py-2 text-gray-700">Node.js</div>
+    <section>
+        <h2 class="section-title">Knowledge</h2>
+        <div class="skills">
+            <div class="skill-tag">Python</div>
+            <div class="skill-tag">Rust</div>
+            <div class="skill-tag">JavaScript</div>
+            <div class="skill-tag">React</div>
+            <div class="skill-tag">Node.js</div>
         </div>
     </section>
 
-    <section class="mb-12">
-        <h2 class="text-2xl font-semibold text-center mb-6">Accounts</h2>
-        <div class="flex justify-center">
-            <a href="https://github.com/martin-k-m" class="hover:opacity-75 transition-opacity">
+    <section>
+        <h2 class="section-title">Accounts</h2>
+        <div class="accounts">
+            <a href="https://github.com/martin-k-m">
                 <img
-                        src="https://github.com/martin-k-m/martin-k-m.github.io/blob/main/pic/github.png"
+                        src="https://img.icons8.com/m_rounded/512/228BE6/github.png"
                         alt="GitHub"
-                        class="w-20 h-20 object-contain"
                 >
             </a>
         </div>
     </section>
 
-    <section class="mb-12">
-        <h2 class="text-2xl font-semibold text-center mb-6">GitHub Stats</h2>
-        <div class="grid md:grid-cols-3 gap-4">
+    <section>
+        <h2 class="section-title">GitHub Stats</h2>
+        <div class="github-stats">
+            <a href="https://github.com/martin-k-m">
+
             <img
-                    src="https://github-readme-streak-stats.herokuapp.com/?user=Martin-K-M&theme=transparent&hide_border=true"
+                    src="https://github-readme-streak-stats.herokuapp.com/?user=Martin-K-M&theme=dark&hide_border=true"
                     alt="GitHub Streak"
-                    class="w-full rounded-lg shadow"
+                    class="center"
+
             >
+            </a>
+            <a href="https://github.com/martin-k-m">
             <img
-                    src="https://github-readme-stats.vercel.app/api?username=Martin-K-M&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=transparent&locale=en&hide_border=true"
+                    src="https://github-readme-stats.vercel.app/api?username=Martin-K-M&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dark&locale=en&hide_border=true"
                     alt="GitHub Stats"
-                    class="w-full rounded-lg shadow"
+                    class="center"
             >
+            </a>
+            <a href="https://github.com/martin-k-m">
             <img
-                    src="https://github-readme-stats.vercel.app/api/top-langs?username=Martin-K-M&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=12&theme=transparent&hide_border=true"
+                    src="https://github-readme-stats.vercel.app/api/top-langs?username=Martin-K-M&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=12&theme=dark&hide_border=true"
                     alt="Top Languages"
-                    class="w-full rounded-lg shadow"
+                    class="center"
             >
+            </a>
         </div>
     </section>
 
-    <footer class="text-center text-gray-500 text-sm">
+    <footer>
         © 2024 by @martin-k-m
     </footer>
 </div>
