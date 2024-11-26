@@ -24,7 +24,7 @@
 
 **Frameworks:** React, Node.js
 
-**Tools:** Git, Juypiter
+**Tools:** Git, Jupyter
 
 </div>
 
@@ -32,7 +32,7 @@
 
 <div align="center">
 
-[<img src="https://www.pngkey.com/png/full/178-1787366_coming-soon-github-white-icon-png.png" width="80" />](https://github.com/martin-k-m)
+[<img src="https://github.com/martin-k-m/martin-k-m.github.io/blob/main/pic/github.png" width="80" />](https://github.com/martin-k-m)
 
 </div>
 
