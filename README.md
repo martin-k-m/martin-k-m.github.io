@@ -10,9 +10,9 @@
 
 <div align="center">
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=anuraghazra&repo=github-readme-stats&theme=transparent&hide_border=true)](https://github.com/anuraghazra/github-readme-stats)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=martin-k-m&repo=github-readme-stats&theme=transparent&hide_border=true)](https://github.com/anuraghazra/github-readme-stats)
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=anuraghazra&repo=github-readme-stats&theme=transparent&hide_border=true)](https://github.com/anuraghazra/github-readme-stats)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=martin-k-m&repo=github-readme-stats&theme=transparent&hide_border=true)](https://github.com/anuraghazra/github-readme-stats)
 
 </div>
 
@@ -20,7 +20,7 @@
 
 <div align="center">
 
-**Languages:** Python, Rust
+**Languages:** Python, Rust, JavaScript
 
 **Frameworks:** React, Node.js
 
@@ -32,7 +32,7 @@
 
 <div align="center">
 
-[<img src="https://github.com/martin-k-m/martin-k-m.github.io/blob/main/pic/github.png" width="80" />](https://github.com/martin-k-m)
+[<img src="https://github.com/martin-k-m/martin-k-m.github.io/blob/main/pic/github.png" width="80"/>](https://github.com/martin-k-m)
 
 </div>
 
