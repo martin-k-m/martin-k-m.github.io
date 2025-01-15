@@ -89,14 +89,14 @@ const App = () => {
                             Exploring technology and building amazing projects.
                             Let's create something great together.
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
                                 href="#projects"
                                 className="bg-[#2496ed] hover:bg-[#2496ed]/90 px-6 py-3 rounded-md text-white text-center font-semibold"
                             >
                                 View Projects
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
