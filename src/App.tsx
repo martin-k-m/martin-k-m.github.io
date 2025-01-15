@@ -86,17 +86,9 @@ const App = () => {
                             Welcome to My Portfolio
                         </h1>
                         <p className="text-xl text-gray-300 mb-8">
-                            Exploring technology and building amazing projects.
-                            Let's create something great together.
+                            Working on some projects.
                         </p>
-                        {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a
-                                href="#projects"
-                                className="bg-[#2496ed] hover:bg-[#2496ed]/90 px-6 py-3 rounded-md text-white text-center font-semibold"
-                            >
-                                View Projects
-                            </a>
-                        </div> */}
+
                     </div>
                 </div>
             </div>
