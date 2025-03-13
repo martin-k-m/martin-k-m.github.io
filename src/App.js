@@ -1,67 +1,79 @@
-import { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faReact, faHtml5, faJs, faCss3, faUnity } from '@fortawesome/free-brands-svg-icons';
-import './App.css';
+import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faReact, faHtml5, faJs, faCss3, faGithub, faLinkedin, faYoutube, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import "./App.css";
 
 function App() {
-  const [activeIconIndex, setActiveIconIndex] = useState(0);
-  const programmingIcons = [faReact, faHtml5, faJs, faCss3];
-  const languages = ['React', 'HTML5', 'JavaScript', 'TypeScript'];
-  const threedTools = ['Blender', 'Unity', 'Unreal'];
+    const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIconIndex((prev) => (prev + 1) % programmingIcons.length);
-    }, 3000); // Increased rotation time
-    return () => clearInterval(interval);
-  }, []);
+    const skills = [
+        { name: "React", icon: faReact, type: "icon" },
+        { name: "Lua", icon: "https://img.icons8.com/?size=100&id=vDUov7oO2PL7&format=png&color=FFFFFF", type: "image" },
+        { name: "HTML5", icon: faHtml5, type: "icon" },
+        { name: "JavaScript", icon: faJs, type: "icon" },
+        { name: "TypeScript", icon: faCss3, type: "icon" },
+        { name: "Visual Basic", icon: "https://img.icons8.com/?size=100&id=121103&format=png&color=FFFFFF", type: "image" },
+    ];
 
-  return (
-      <div className="container">
-        <div className="content">
-          <h1 className="name" style={{ animationDelay: '0.2s' }}>Your Name</h1>
+    const socials = [
+        { name: "GitHub", icon: faGithub, url: "https://github.com/martin-k-m" },
+        { name: "LinkedIn", icon: faLinkedin, url: "https://www.linkedin.com/in/martin-muskov-3a450134b/" },
+        { name: "Roblox", icon: "https://img.icons8.com/ios-filled/100/roblox.png", url: "https://www.roblox.com/users/271588613/profile" },
+        { name: "YouTube", icon: faYoutube, url: "https://www.youtube.com/@martinmuskov" },
+        { name: "Instagram", icon: faInstagram, url: "https://www.instagram.com/martin_muskov/" },
+    ];
 
-          <div className="icon-container">
-            <FontAwesomeIcon
-                icon={programmingIcons[activeIconIndex]}
-                className="main-icon"
-            />
-            <div className="language-text">
-              {languages[activeIconIndex]}
-            </div>
-          </div>
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveIndex((prev) => (prev + 1) % skills.length);
+        }, 3000);
 
-          <div className="threed-section">
-            {threedTools.map((tool, index) => (
-                <div
-                    key={tool}
-                    className="threed-tool"
-                    style={{ animationDelay: `${0.4 + index * 0.1}s` }}
-                >
-                  {tool === 'Blender' && (
-                      <img
-                          src="/blender-icon.png"
-                          alt="Blender"
-                          style={{ width: 60, height: 60 }}
-                      />
-                  )}
-                  {tool === 'Unity' && (
-                      <FontAwesomeIcon icon={faUnity} className="tool-icon" />
-                  )}
-                  {tool === 'Unreal' && (
-                      <img
-                          src="/unreal-icon.png"
-                          alt="Unreal"
-                          style={{ width: 60, height: 60 }}
-                      />
-                  )}
-                  <span>{tool}</span>
+        return () => clearInterval(interval);
+    }, [skills.length]);
+
+    return (
+        <div className="container">
+            <div className="content">
+                <h1 className="name">Martin Muskov</h1>
+                <h2 className="subtitle">Student</h2>
+
+                <div className="social-links">
+                    {socials.map((social) => (
+                        <a
+                            key={social.name}
+                            href={social.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="social-icon"
+                        >
+                            {social.icon instanceof Object ? (
+                                <FontAwesomeIcon icon={social.icon} />
+                            ) : (
+                                <img src={social.icon} alt={social.name} />
+                            )}
+                        </a>
+                    ))}
                 </div>
-            ))}
-          </div>
+
+                <div className="carousel-container">
+                    <div className="carousel-track">
+                        {skills.map((skill, index) => (
+                            <div
+                                key={skill.name}
+                                className={`skill-card ${index === activeIndex ? "active" : ""}`}
+                            >
+                                {skill.type === "image" ? (
+                                    <img src={skill.icon} alt={skill.name} className="skill-icon" />
+                                ) : (
+                                    <FontAwesomeIcon icon={skill.icon} className="skill-icon" />
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-  );
+    );
 }
 
 export default App;
