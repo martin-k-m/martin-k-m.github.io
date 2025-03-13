@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/martin-k-m/martin-k-m.github.io/static/css/main.17598371.css",
-    "main.js": "/martin-k-m/martin-k-m.github.io/static/js/main.86300503.js",
-    "static/js/453.1a7c5738.chunk.js": "/martin-k-m/martin-k-m.github.io/static/js/453.1a7c5738.chunk.js",
-    "index.html": "/martin-k-m/martin-k-m.github.io/index.html",
-    "main.17598371.css.map": "/martin-k-m/martin-k-m.github.io/static/css/main.17598371.css.map",
-    "main.86300503.js.map": "/martin-k-m/martin-k-m.github.io/static/js/main.86300503.js.map",
-    "453.1a7c5738.chunk.js.map": "/martin-k-m/martin-k-m.github.io/static/js/453.1a7c5738.chunk.js.map"
+    "main.css": "/static/css/main.e85402e8.css",
+    "main.js": "/static/js/main.8ed6852d.js",
+    "static/js/453.1407b060.chunk.js": "/static/js/453.1407b060.chunk.js",
+    "index.html": "/index.html",
+    "main.e85402e8.css.map": "/static/css/main.e85402e8.css.map",
+    "main.8ed6852d.js.map": "/static/js/main.8ed6852d.js.map",
+    "453.1407b060.chunk.js.map": "/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.17598371.css",
-    "static/js/main.86300503.js"
+    "static/css/main.e85402e8.css",
+    "static/js/main.8ed6852d.js"
   ]
 }
