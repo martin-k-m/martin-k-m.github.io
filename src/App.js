@@ -35,7 +35,7 @@ function App() {
         <div className="container">
             <div className="content">
                 <h1 className="name">Martin Muskov</h1>
-                <h2 className="subtitle">Student</h2>
+                <h2 className="subtitle"></h2>
 
                 <div className="social-links">
                     {socials.map((social) => (
