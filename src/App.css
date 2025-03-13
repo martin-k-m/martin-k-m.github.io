@@ -1,3 +1,4 @@
+/* Slower gradient animation */
 .container {
   min-height: 100vh;
   display: flex;
@@ -5,7 +6,7 @@
   align-items: center;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  animation: gradient 30s ease infinite; /* Slowed from 15s to 30s */
 }
 
 @keyframes gradient {
@@ -14,65 +15,64 @@
   100% { background-position: 0% 50%; }
 }
 
-.content {
-  text-align: center;
-  color: white;
-  padding: 2rem;
-  background: rgba(0, 0, 0, 0.7);
-  border-radius: 15px;
-}
-
-.name {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-}
-
+/* 3D Rotating Icon */
 .icon-container {
+  perspective: 1000px;
   margin: 2rem 0;
 }
 
 .main-icon {
-  font-size: 4rem;
+  font-size: 5rem;
   margin: 1rem;
-  transition: all 0.5s ease;
+  transform-style: preserve-3d;
+  animation: rotate 8s linear infinite;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+}
+
+@keyframes rotate {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+/* Sleeker Animations */
+.content {
+  text-align: center;
+  color: white;
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 20px;
+  animation: contentEntry 1.5s ease-out;
+  box-shadow: 0 0 30px rgba(0,0,0,0.3);
+}
+
+@keyframes contentEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .language-text {
-  font-size: 1.5rem;
-  margin-top: 1rem;
+  font-size: 1.8rem;
+  margin-top: 1.5rem;
+  animation: textGlow 2s ease-in-out infinite alternate;
 }
 
-.threed-section {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
+@keyframes textGlow {
+  from { text-shadow: 0 0 5px rgba(255,255,255,0.3); }
+  to { text-shadow: 0 0 15px rgba(255,255,255,0.7); }
 }
 
 .threed-tool {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  transform: translateZ(0);
 }
 
-.threed-tool img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 0.5rem;
-}
-
-@media (max-width: 768px) {
-  .content {
-    margin: 1rem;
-    padding: 1rem;
-  }
-
-  .name {
-    font-size: 2rem;
-  }
-
-  .threed-section {
-    flex-direction: column;
-  }
+.threed-tool:hover {
+  transform: scale(1.2) translateZ(20px);
+  filter: drop-shadow(0 0 10px white);
 }
