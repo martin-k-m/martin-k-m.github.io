@@ -1,0 +1,78 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.content {
+  text-align: center;
+  color: white;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 15px;
+}
+
+.name {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.icon-container {
+  margin: 2rem 0;
+}
+
+.main-icon {
+  font-size: 4rem;
+  margin: 1rem;
+  transition: all 0.5s ease;
+}
+
+.language-text {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+
+.threed-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.threed-tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.2rem;
+}
+
+.threed-tool img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .content {
+    margin: 1rem;
+    padding: 1rem;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .threed-section {
+    flex-direction: column;
+  }
+}
