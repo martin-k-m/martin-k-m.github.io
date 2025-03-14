@@ -87,7 +87,7 @@ function App() {
         <motion.div initial="hidden" animate="visible" className="container">
             <div className="content">
                 <motion.h1 className="name" variants={fadeIn}>Martin Muskov</motion.h1>
-                <motion.h2 className="subtitle" variants={fadeIn}>Software Developer & Engineer</motion.h2>
+                <motion.h2 className="subtitle" variants={fadeIn}></motion.h2>
 
                 <motion.div className="social-links" variants={scaleUp}>
                     {socials.map((social) => (
