@@ -1,123 +1,296 @@
 body {
   background: linear-gradient(135deg, #0f446e, #f84646);
-  background-size: 300% 300%;
-  animation: gradientNoise 200s ease infinite;
+  background-size: 200% 200%;
+  animation: gradientNoise 20s ease infinite;
   margin: 0;
-  padding: 0;
+  padding: 20px;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   text-align: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
   background-attachment: fixed;
-  background-position: center center;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 @keyframes gradientNoise {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 100% 100%;
-  }
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
 .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   width: 100%;
+  max-width: 1200px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .content {
   position: relative;
   z-index: 2;
-}
-
-h1,
-h2 {
-  color: white;
-  margin: 10px 0;
+  width: 100%;
 }
 
 .name {
-  font-size: 3rem;
+  font-size: clamp(2rem, 8vw, 3rem);
   font-weight: bold;
+  color: white;
+  margin: 20px 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .subtitle {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 4vw, 1.5rem);
   color: #ccc;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.section-title {
+  color: white;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  margin: 40px 0 30px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: rgba(255,255,255,0.3);
+  animation: underlineGrow 0.8s ease-out;
+}
+
+@keyframes underlineGrow {
+  from { width: 0 }
+  to { width: 60px }
 }
 
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 15px;
   margin: 20px 0;
+  flex-wrap: wrap;
+  padding: 0 10px;
 }
 
 .social-icon {
   color: white;
-  font-size: 2rem;
-  transition: transform 0.3s ease;
+  font-size: clamp(1.5rem, 6vw, 2rem);
+  transition: all 0.3s ease;
+  will-change: transform;
 }
 
 .social-icon:hover {
-  transform: scale(1.2);
+  transform: scale(1.2) rotate(8deg);
 }
 
 .social-icon img {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.5em;
+  height: 1.5em;
   filter: brightness(0) invert(1);
+}
+
+/* Skills Carousel */
+.skills-section {
+  margin: 50px 0;
 }
 
 .carousel-container {
   width: 100%;
   position: relative;
-  margin: 50px auto;
+  margin: 30px auto;
   overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease-in-out;
-  will-change: transform;
+  justify-content: center;
+  padding: 0 20px;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
 }
 
 .skill-card {
-  width: 150px;
-  height: 150px;
+  width: clamp(100px, 25vw, 150px);
+  height: clamp(100px, 25vw, 150px);
   flex: 0 0 auto;
-  margin: 0 25px;
+  margin: 0 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.1); /* FIXED RGBA VALUE */
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 15px;
   opacity: 0.6;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
+  scroll-snap-align: center;
+  will-change: transform;
 }
 
 .skill-card.active {
   opacity: 1;
-  transform: scale(1.1);
 }
 
 .skill-icon {
-  width: 60px;
-  height: 60px;
+  width: 50%;
+  height: 50%;
   filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
 }
 
-@keyframes noise {
-  0% {
-    background-position: 0 0;
+/* Projects Section */
+.projects-section {
+  margin: 60px 0;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.project-card {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: white;
+  box-sizing: border-box;
+  will-change: transform;
+  backdrop-filter: blur(5px);
+}
+
+.project-card h4 {
+  margin: 10px 0;
+  font-size: 1.3rem;
+}
+
+.project-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Education Timeline */
+.education-section {
+  margin: 60px 0;
+}
+
+.vertical-timeline {
+  width: 100% !important;
+  max-width: 1000px !important;
+  margin: 0 auto !important;
+}
+
+.vertical-timeline-element-content {
+  box-shadow: none !important;
+  padding: 25px !important;
+  margin-left: 40px !important;
+  backdrop-filter: blur(8px);
+  border-radius: 15px !important;
+}
+
+.education-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.education-dates {
+  font-size: 0.9rem;
+  color: #ddd;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
   }
-  100% {
-    background-position: 20px 20px;
+
+  .carousel-track {
+    justify-content: flex-start;
+    padding: 0 15px;
+  }
+
+  .skill-card {
+    margin: 0 10px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .vertical-timeline-element-content {
+    margin-left: 30px !important;
+    width: calc(100% - 50px) !important;
+    padding: 20px !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+
+  .project-card {
+    padding: 20px;
+    margin: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .vertical-timeline-element-content {
+    margin-left: 25px !important;
+    width: calc(100% - 40px) !important;
+    padding: 15px !important;
+  }
+
+  .vertical-timeline-element-title {
+    font-size: 1.2rem !important;
+  }
+
+  .vertical-timeline-element-subtitle {
+    font-size: 1rem !important;
+  }
+
+  .skill-card {
+    width: 80px;
+    height: 80px;
+    margin: 0 8px;
+  }
+
+  .project-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .project-card p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .vertical-timeline-element-content {
+    margin-left: 20px !important;
+    width: calc(100% - 35px) !important;
+  }
+
+  .skill-card {
+    width: 70px;
+    height: 70px;
   }
 }
