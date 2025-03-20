@@ -29,7 +29,6 @@ const skills = [
 const socials = [
     { name: "GitHub", icon: faGithub, url: "https://github.com/martin-k-m" },
     { name: "LinkedIn", icon: faLinkedin, url: "https://www.linkedin.com/in/martin-muskov-3a450134b/" },
-    { name: "Roblox", icon: "https://img.icons8.com/ios-filled/100/roblox.png", url: "https://www.roblox.com/users/271588613/profile" },
     { name: "YouTube", icon: faYoutube, url: "https://www.youtube.com/@martinmuskov" },
     { name: "Instagram", icon: faInstagram, url: "https://www.instagram.com/martin_muskov/" },
 ];
