@@ -56,9 +56,9 @@ const education = [
 
 const projects = [
     {
-        title: "StormBound",
-        description: "Roblox MMO RPG",
-        link: "",
+        title: "Dune",
+        description: "Simple Math, Science & Statistics Framework in JS",
+        link: "https://github.com/martin-k-m/dune",
         icon: ""
     },
     {
