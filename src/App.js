@@ -48,7 +48,7 @@ const education = [
     },
     {
         title: "University of California, Santa Cruz",
-        subtitle: "Electrical Engineering (Expected)",
+        subtitle: "Electrical Engineering",
         date: "2025 - ",
         color: "#db8834",
     }
@@ -62,8 +62,8 @@ const projects = [
         icon: ""
     },
     {
-        title: "Aereno",
-        description: "Redefine. Knowledge.",
+        title: "Untitled Game",
+        description: "",
         link: "",
         icon: ""
     },
@@ -178,10 +178,10 @@ function App() {
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                 >
-                                    <h3 className="vertical-timeline-element-title" style={{ color: edu.color }}>
+                                    <h3 className="vertical-timeline-element-title" style={{ color: "white" }}>
                                         {edu.title}
                                     </h3>
-                                    <div className="education-dates" style={{ color: edu.color }}>
+                                    <div className="education-dates" style={{ color: "white"}}>
                                         {edu.date}
                                     </div>
                                     <h4 className="vertical-timeline-element-subtitle">{edu.subtitle}</h4>
