@@ -69,7 +69,7 @@ const education = [
 const projects = [
     {
         title: "Refine AI",
-        description: "Educational platform leveraging AI to provide personalized learning experiences for students in STEM subjects.",
+        description: "Helping students with the power of AI.",
         link: "/",
         icon: faRobot
     },
