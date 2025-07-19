@@ -73,12 +73,7 @@ const projects = [
         link: "/",
         icon: faRobot
     },
-    {
-        title: "Portfolio Website",
-        description: "Interactive portfolio showcasing my technical skills, projects, and professional journey with clean, modern design.",
-        link: "/",
-        icon: faCode
-    },
+
 ];
 
 function App() {
