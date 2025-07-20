@@ -45,23 +45,23 @@ const socials = [
 const education = [
     {
         title: "Las Lomas High School",
-        subtitle: "───────────────────",
+        subtitle: "High School Diploma",
         date: "2021 - 2023",
-        icon: faGraduationCap,
+//        icon: faMicrochip,
         description: ""
     },
     {
         title: "Heritage High School",
-        subtitle: "──────────────────",
+        subtitle: "High School Diploma",
         date: "2023 - 2025",
-        icon: faGraduationCap,
+//        icon: faGraduationCap,
         description: ""
     },
     {
         title: "University of California, Santa Cruz",
-        subtitle: "────────────────────────────",
+        subtitle: "Bachelor's Degree",
         date: "2025 - Present",
-        icon: faMicrochip,
+//        icon: faMicrochip,
         description: "B.S. in Electrical Engineering"
     }
 ];
@@ -73,12 +73,22 @@ const projects = [
         link: "/",
         icon: faRobot
     },
-
 ];
 
 function App() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [profileImage] = useState("https://avatars.githubusercontent.com/u/65186527?v=4");
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -101,12 +111,13 @@ function App() {
                 <div className="profile-section">
                     <motion.div
                         className="profile-image-container"
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={!isMobile ? { scale: 1.05 } : {}}
                     >
                         <img
                             src={profileImage}
                             alt="Martin Muskov"
                             className="profile-image"
+                            loading="lazy"
                         />
                         <div className="profile-image-border"></div>
                     </motion.div>
@@ -127,6 +138,7 @@ function App() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="social-icon"
+                                    aria-label={social.name}
                                 >
                                     <FontAwesomeIcon icon={social.icon} />
                                 </a>
@@ -139,13 +151,13 @@ function App() {
                     <motion.div
                         className="skills-section grid-item"
                         variants={fadeIn}
-                        whileHover={{ boxShadow: "0 0 15px rgba(0, 150, 255, 0.5)" }}
+                        whileHover={!isMobile ? { boxShadow: "0 0 15px rgba(0, 150, 255, 0.5)" } : {}}
                     >
                         <h3 className="section-title">
                             <FontAwesomeIcon icon={faCode} className="section-icon" />
                             Technical Skills
                         </h3>
-                        <div className="skills-vertical">
+                        <div className="skills-container">
                             {skills.map((skill, index) => (
                                 <motion.div
                                     key={skill.name}
@@ -158,7 +170,12 @@ function App() {
                                     transition={{ type: "spring", stiffness: 300 }}
                                 >
                                     {skill.type === "image" ? (
-                                        <img src={skill.icon} alt={skill.name} className="skill-icon" />
+                                        <img
+                                            src={skill.icon}
+                                            alt={skill.name}
+                                            className="skill-icon"
+                                            loading="lazy"
+                                        />
                                     ) : (
                                         <FontAwesomeIcon icon={skill.icon} className="skill-icon" />
                                     )}
@@ -171,13 +188,13 @@ function App() {
                     <motion.div
                         className="projects-section grid-item"
                         variants={fadeIn}
-                        whileHover={{ boxShadow: "0 0 15px rgba(0, 255, 150, 0.5)" }}
+                        whileHover={!isMobile ? { boxShadow: "0 0 15px rgba(0, 255, 150, 0.5)" } : {}}
                     >
                         <h3 className="section-title">
                             <FontAwesomeIcon icon={faMicrochip} className="section-icon" />
                             Current Projects
                         </h3>
-                        <div className="projects-vertical">
+                        <div className="projects-container">
                             {projects.map((project, index) => (
                                 <motion.a
                                     key={index}
@@ -185,7 +202,7 @@ function App() {
                                     className="project-card"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    whileHover={{ scale: 1.05, boxShadow: "0 0 15px rgba(0, 255, 150, 0.5)" }}
+                                    whileHover={!isMobile ? { scale: 1.05, boxShadow: "0 0 15px rgba(0, 255, 150, 0.5)" } : {}}
                                     whileTap={{ scale: 0.95 }}
                                 >
                                     <div className="project-icon">
@@ -201,7 +218,7 @@ function App() {
                     <motion.div
                         className="education-section grid-item"
                         variants={fadeIn}
-                        whileHover={{ boxShadow: "0 0 15px rgba(255, 150, 0, 0.5)" }}
+                        whileHover={!isMobile ? { boxShadow: "0 0 15px rgba(255, 150, 0, 0.5)" } : {}}
                     >
                         <h3 className="section-title">
                             <FontAwesomeIcon icon={faGraduationCap} className="section-icon" />
@@ -210,23 +227,26 @@ function App() {
                         <VerticalTimeline
                             lineColor="var(--accent-color)"
                             className="custom-timeline"
-                            layout="1-column-left"
+                            layout={isMobile ? "1-column" : "1-column-left"}
+                            animate={!isMobile}
                         >
                             {education.map((edu, index) => (
                                 <VerticalTimelineElement
                                     key={index}
-                                    icon={
-                                        <FontAwesomeIcon
-                                            icon={edu.icon}
-                                            style={{
-                                                width: '0%',
-                                                height: '0%',
-                                                color: 'var(--primary-color)'
-                                            }}
-                                        />
-                                    }
+                                    className="vertical-timeline-element"
+                                    contentStyle={{ background: 'rgba(255, 255, 255, 0.1)', boxShadow: 'none' }}
+                                    contentArrowStyle={{ borderRight: '7px solid rgba(255, 255, 255, 0.3)' }}
                                     date={edu.date}
                                     dateClassName="timeline-date"
+                                    iconStyle={{
+                                        background: 'var(--accent-color)',
+                                        boxShadow: '0 0 0 3px var(--accent-color), 0 0 10px var(--accent-color)',
+                                        width: isMobile ? '15px' : '20px',
+                                        height: isMobile ? '15px' : '20px',
+                                        left: isMobile ? '7.5px' : '10px',
+                                        marginLeft: isMobile ? '-7.5px' : '-10px'
+                                    }}
+                                    icon={<FontAwesomeIcon icon={edu.icon} />}
                                 >
                                     <motion.div
                                         className="education-content"
